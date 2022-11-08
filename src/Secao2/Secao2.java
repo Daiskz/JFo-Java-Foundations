@@ -22,5 +22,21 @@ public class Secao2 {
         System.out.println("#  ####  #");
         System.out.println(" #      # ");
         System.out.println("  ######  ");
+        System.out.println("        "); //coloquei para ter um espaçamento
+
+        System.out.println("   /\\       /\\   ");
+        System.out.println("  /  \\_____/  \\  ");
+        System.out.println(" /             \\  ");
+        System.out.println("(   -0-    -0-  )  ");
+        System.out.println(" ====       ====   ");
+        System.out.println("=====(__|__)=====  ");
+        System.out.println("   (         )     ");
+        System.out.println("    (_______)      ");
+        desenharPernas();
+    }
+    public static void desenharPernas(){
+        System.out.println("     ||   ||       ");
+        System.out.println("     ||   ||       ");
+        System.out.println("    (||) (||)      ");
     }
 }
