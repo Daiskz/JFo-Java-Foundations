@@ -5,7 +5,7 @@ import java.util.Random;
 public class ComputeMethods {
     public double fToC(double degreesF){
         double degreesC = 0;
-        degreesC = 5 / 9 * (degreesF - 32);
+        degreesC = (degreesF - 32) * 5/9;
         return degreesC;
     }
 
