@@ -11,11 +11,17 @@ Considere a possibilidade de o programa travar se o usuário inserir dados inapr
 
 Seu programa também deve fazer o seguinte:
 •	Aceitar pelo menos uma entrada, que deverá ser analisada como String
+
 •	Aceitar pelo menos uma entrada, que deverá ser analisada como int
+
 •	Aceitar pelo menos uma entrada, que deverá ser analisada como double
+
 •	Usar pelo menos uma entrada em uma pergunta para o usuário
+
 •	Fazer cálculos com pelo menos uma entrada int
+
 •	Fazer cálculos com pelo menos uma entrada double
+
 •	Aceitar pelo menos um total de dez entradas 
 
 Esse conjunto de problemas pode criar todo o programa dentro do método principal. 
