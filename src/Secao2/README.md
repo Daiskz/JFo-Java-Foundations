@@ -31,4 +31,4 @@ Você pode criar outro gato. No entanto, essa imagem deve ser bem diferente do e
 
 Observação: a barra invertida () tem um significado especial nas instruções de impressão Java. Se optar por usar uma barra invertida na sua imagem, na verdade você precisará escrever duas barras invertidas (\) na instrução de impressão.
 
-O projeto ProblemSet2_2 está disponível para ajudar você a começar.
+O projeto ProblemSet2_2 está disponível para ajudar você a começar. a
