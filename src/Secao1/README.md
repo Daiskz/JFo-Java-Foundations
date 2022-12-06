@@ -20,4 +20,3 @@ Edite o código de modo que ele imprima uma mensagem diferente de “Hello World
 Altere o ‘S’ em ‘System’ para minúsculo e tente compilar. • A sintaxe Java faz distinção entre letras maiúsculas e minúsculas?
 
 Remova o ponto e vírgula (;) e tente compilar. • O ponto e vírgula é importante para a sintaxe Java?
-
