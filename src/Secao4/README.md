@@ -16,7 +16,9 @@ Crie uma instância de ComputeMethods, chame os métodos definidos em ComputeMet
 Saída Esperada:
 
 Temp in celsius is 38.00000000000001
+
 Hypotenuse is 10.816653826391969
+
 The sum of the dice values is 9
 
 Problema 2: Processando um nome
@@ -39,4 +41,5 @@ Você deve implementar o seguinte:
 Saída Esperada:
 
 Type your name: Jenny Weaver
+
 Your name is: Weaver, J.
