@@ -1,52 +1,26 @@
 package Secao7;
 
+import java.util.Random;
+
 public class Jogo {
-    private String nomeJogo;
-    private int quantidadeCreditos;
-    private String monitorLCD;
-    private String leitorCartaoMagnetico;
-
-    public String getNomeJogo() {
-        return nomeJogo;
-    }
-    public void setNomeJogo(String nomeJogo) {
-        this.nomeJogo = nomeJogo;
-    }
-    public int getQuantidadeCreditos() {
-        return quantidadeCreditos;
-    }
-    public void setQuantidadeCreditos(int quantidadeCreditos) {
-        this.quantidadeCreditos = quantidadeCreditos;
-    }
-    public String getMonitorLCD() {
-        return monitorLCD;
-    }
-    public void setMonitorLCD(String monitorLCD) {
-        this.monitorLCD = monitorLCD;
-    }
-    public String getLeitorCartaoMagnetico() {
-        return leitorCartaoMagnetico;
-    }
-    public void setLeitorCartaoMagnetico(String leitorCartaoMagnetico) {
-        this.leitorCartaoMagnetico = leitorCartaoMagnetico;
-    }
-
-    public void passarCartaoParaJogar(Cartao cartao) {
-        int saldoDoCartao = cartao.getSaldoAtual();
-        if (saldoDoCartao >= quantidadeCreditos) {
-            //Isso reduz o saldo de créditos
-            cartao.setSaldoAtual(saldoDoCartao - quantidadeCreditos);
-            //Mas dá um número aleatório e não negativo de tickets
-            int ticketsGanhos = 5;
-            //Imprima o número do cartão e o número de tickets ganhos, junto com o novo total
-            System.out.format("Pode Jogar! %d %d %d", cartao.getNumeroCartao(), ticketsGanhos, cartao.getSaldoAtual());
-
+    public static void jogarJogo(Cartao cartao) {
+        int valorParaJogar = 100;
+        if (cartao.getSaldoAtual() < 100) {
+            System.out.println("AVISO!");
+            System.out.println("Você não tem a quantidade de créditos necessários para jogar");
         }
         else {
-            //Imprima uma mensagem se um cartão tiver saldos insuficientes
-            System.out.print("Creditos insuficientes");
+            System.out.println("TUDO CERTO!");
+            System.out.println("Você usou 50 crétidos para jogar!");
+            cartao.setSaldoAtual(cartao.getSaldoAtual() - valorParaJogar);
+            System.out.println("Saldo atual: " + cartao.getSaldoAtual());
+            Random random = new Random();
+            int ticketsGanhados = random.nextInt(20, 100);
+            cartao.setSaldoTicket(cartao.getSaldoTicket() + ticketsGanhados);
+            System.out.println("Cartão: " + cartao.getNumeroCartao());
+            System.out.println("Tickets ganhados: " + ticketsGanhados);
+            System.out.println("Quantidade de tickets atual: " + cartao.getSaldoTicket());
         }
-
     }
 
 }
