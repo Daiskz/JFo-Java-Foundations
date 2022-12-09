@@ -1,64 +1,27 @@
 package Secao8;
 
-import java.util.Scanner;
-
 public class TesteLiga {
     public static void main(String[] args) {
-        LigaFutebol liga = new LigaFutebol();
-
-        Scanner entrada = new Scanner(System.in);
-        
-        int TemperaturasBaixasEmSequencia = 3;
-        double TemperaturaDoJogo;
-
-        while (TemperaturasBaixasEmSequencia > 0) {
-            //ler os dados dos jogos
-            TemperaturaDoJogo = entrada.nextDouble();
-            if (TemperaturaDoJogo > 0) {
-                //input de 2 jogos
-                Jogo jogo1 = new Jogo();
-                
-                jogo1.setEquipeA(entrada.nextLine());
-                jogo1.setEquipeB(entrada.nextLine());
-                jogo1.setGolsEquipeA(entrada.nextInt());
-                jogo1.setGolsEquipeB(entrada.nextInt());
-                jogo1.setTemperatura(TemperaturaDoJogo);
-
-                Jogo jogo2 = new Jogo();
-                jogo2.setEquipeA(entrada.nextLine());
-                jogo2.setEquipeB(entrada.nextLine());
-                jogo2.setGolsEquipeA(entrada.nextInt());
-                jogo2.setGolsEquipeB(entrada.nextInt());
-                jogo2.setTemperatura(TemperaturaDoJogo);
-
-                liga.tabelaJogos.add(jogo2);
-
-                TemperaturasBaixasEmSequencia = 3;
-            } else {
-                TemperaturasBaixasEmSequencia--;
-            }
-            entrada.close();
-        }
+        Time equipeA = new Time("Equipe A");
+        Time equipeB = new Time("Equipe B");
+        Time equipeC = new Time("Equipe C");
+        Time equipeD = new Time("Equipe D");
 
         Jogo jogo1 = new Jogo();
+        jogo1.jogoPartida(equipeA, equipeB);
 
-        jogo1.setEquipeA("Flamengo");
-        jogo1.setEquipeB("Palmeiras");
-        jogo1.setGolsEquipeA(3);
-        jogo1.setGolsEquipeB(3);
-        jogo1.setTemperatura(25.0);
-        
         Jogo jogo2 = new Jogo();
-        jogo2.setEquipeA("Portuguesa");
-        jogo2.setEquipeB("Nautico");
-        jogo2.setGolsEquipeA(2);
-        jogo2.setGolsEquipeB(1);
-        jogo2.setTemperatura(18.0);
+        jogo2.jogoPartida(equipeC, equipeD);
 
-        liga.tabelaJogos.add(jogo1);
+        Jogo jogo3 = new Jogo();
+        jogo3.jogoPartida(equipeB, equipeC);
 
-        liga.tabelaJogos.get(0);
+        Jogo jogo4 = new Jogo();
+        jogo4.jogoPartida(equipeA, equipeD);
 
-        liga.tabelaJogos.remove(0);
+        System.out.println(equipeA.toString());
+        System.out.println(equipeB.toString());
+        System.out.println(equipeC.toString());
+        System.out.println(equipeD.toString());
     }
 }

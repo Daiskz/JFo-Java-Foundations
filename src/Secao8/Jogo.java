@@ -1,47 +1,53 @@
 package Secao8;
 
-public class Jogo {
-    private int id;
-    private String equipeA;
-    private String equipeB;
-    private int golsEquipeA;
-    private int golsEquipeB;
-    private double temperatura;
+import java.util.Random;
+import java.util.Scanner;
 
-    public String getEquipeA() {
-        return equipeA;
+public class Jogo {
+    public void jogoPartida(Time time1, Time time2) {
+        Scanner entrada = new Scanner(System.in);
+        double temperatura;
+        int contador = 0;
+        System.out.println("Informe a temperatura: ");
+        temperatura = entrada.nextDouble();
+        if (temperatura > 0 && temperatura < 20) {
+            temperaturaNormal(time1, time2);
+        }
+        else if (temperatura >= 20 && temperatura < 40) {
+            temperaturaQuente(time1, time2);
+        }
+        else {
+            System.out.println("Muito frio para jogar");
+        }
     }
-    public String getEquipeB() {
-        return equipeB;
+    private void temperaturaNormal(Time time1, Time time2) {
+        Random r = new Random();
+        int golsRealizadosTime1 = r.nextInt(1,5);
+        int golsRealizadosTime2 = r.nextInt(1, 5);
+        levantamentos(time1, time2, golsRealizadosTime1, golsRealizadosTime2);
     }
-    public int getGolsEquipeA() {
-        return golsEquipeA;
+    private void temperaturaQuente(Time time1, Time time2) {
+        Random r = new Random();
+        int golsRealizadosTime1 = r.nextInt(1, 5);
+        int golsRealizadosTime2 = r.nextInt(1, 5);
+        levantamentos(time1, time2, golsRealizadosTime1, golsRealizadosTime2);
     }
-    public int getGolsEquipeB() {
-        return golsEquipeB;
-    }
-    public int getId() {
-        return id;
-    }
-    public double getTemperatura() {
-        return temperatura;
-    }
-    public void setEquipeA(String equipeA) {
-        this.equipeA = equipeA;
-    }
-    public void setEquipeB(String equipeB) {
-        this.equipeB = equipeB;
-    }
-    public void setGolsEquipeA(int golsEquipeA) {
-        this.golsEquipeA = golsEquipeA;
-    }
-    public void setGolsEquipeB(int golsEquipeB) {
-        this.golsEquipeB = golsEquipeB;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public void setTemperatura(double temperatura) {
-        this.temperatura = temperatura;
+    private void levantamentos(Time time1, Time time2, int golsRealizadosTime1, int golsRealizadosTime2) {
+        time1.setGolsRealizados(golsRealizadosTime1);
+        time2.setGolsRealizados(golsRealizadosTime2);
+        time1.setGolsSofridos(golsRealizadosTime2);
+        time2.setGolsSofridos(golsRealizadosTime1);
+        if (golsRealizadosTime1 > golsRealizadosTime2) {
+            time1.setVitorias(time1.getVitorias() + 1);
+            time2.setDerrotas(time2.getDerrotas() + 1);
+        }
+        else if (golsRealizadosTime2 > golsRealizadosTime1) {
+            time1.setDerrotas(time1.getDerrotas() + 1);
+            time2.setVitorias(time2.getVitorias() + 1);
+        }
+        else {
+            time1.setEmpates(time1.getEmpates() + 1);
+            time2.setEmpates(time2.getEmpates() + 1);
+        }
     }
 }
