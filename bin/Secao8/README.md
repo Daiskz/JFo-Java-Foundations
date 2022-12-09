@@ -1,52 +1,108 @@
 ## Java Foundations
 
-## Exercício - Seção 7
+## Exercício - Seção 8
 
 ## Visão Geral
 
-Hoje é a noite de encontros no Fliperama. Depois de um anoitecer se divertindo com jogos e ganhando prêmios, você e seu/sua acompanhante não conseguem parar de pensar "Como essas máquinas são programadas?". 
-Vocês analisam possíveis designs no metrô na volta para o campus da universidade. 
-E aproveitam o restante da noite programando romanticamente suas ideias juntos. 
+Esse foi um inverno extremamente frio e com muita neve. Nenhum dos nossos amigos queria jogar futebol. Mas agora que a primavera chegou outra temporada da liga pode começar. Seu desafio é criar um programa que modele uma liga de futebol e controle as estatísticas da temporada.
 
-Vocês fizeram várias observações sobre o fliperama. Um terminal é usado para converter dinheiro em crédito de jogo. Os créditos são carregados em fichas de plástico. Esses dados são armazenados na tarja magnética de um cartão. Os cartões são passados no leitor do cartão magnético de qualquer máquina do fliperama. Os jogos consomem os créditos de um cartão, mas concedem prêmios em tíquetes. Esses tíquetes também são armazenados na tarja magnética de um cartão e podem ser trocados por prêmios no terminal. O terminal também é usado para verificar o saldo e a contagem de tíquetes do cartão de crédito, bem como para transferir créditos ou tíquetes entre os cartões. 
+A liga é composta de quatro equipes. As partidas são determinadas aleatoriamente. Toda terça-feira tem dois jogos; assim, todas as equipes jogam semanalmente. Não há um número definido de jogos por temporada. A temporada continua até o inverno chegar. 
+
+A liga é muito sensível à temperatura. Os jogadores da defesa ficam muito preguiçosos nos dias quentes. Então, nos dias mais quentes, é possível fazer mais gols durante um jogo. Se a temperatura estiver congelante, nenhum jogo será marcado naquela semana. Se houver três semanas consecutivas de temperaturas muito baixas, isso indica que o inverno chegou, e a temporada está encerrada.
 
 ## Tarefas 
 
-Crie um programa Java que modele as propriedades, os comportamentos e as interações de objetos do fliperama. Você também precisará de uma classe de teste que contenha um método principal. Use o método principal para modelar ações que orientarão o programa, como instanciar objetos e passar o cartão na máquina. Todos os campos devem ser private. Forneça o método getter e quaisquer métodos setter que sejam necessários.
+Crie um programa que modele uma liga de futebol e controle as estatísticas da temporada. Considere quais dados devem ser armazenados em uma matriz e quais devem ser armazenados em uma ArrayList. Projete classes com campos e métodos com base na descrição da liga. Você também precisará de uma classe de teste que contenha um método principal. Todos os campos devem ser private. Forneça os métodos getters e setters necessários.
 
-## Cartões
+## Equipes
 
-A tarja magnética nos cartões de jogos oferece um espaço de armazenamento limitado e nenhuma capacidade de computação. Os cartões armazenam informações sobre o saldo atual do cartão de crédito, o saldo de tíquetes e o número do cartão. Nenhum desses saldos pode ser negativo. Os cartões individuais não conseguem fazer cálculos, nem somas simples, nem perceber que os saldos estão ficando negativos.
+Cada equipe tem um nome. O programa deve manter o controle do total de vitórias, derrotas, empates, 
+gols marcados e gols sofridos de cada equipe. Crie uma matriz que o programador gerenciará.
 
-Cada cartão é criado com um número de identificação inteiro exclusivo. Embora cada cartão não consiga fazer uma soma simples, ainda assim é possível fazer cálculos com propriedades que pertençam a todos os cartões.
- 
+Imprima as estatísticas de cada equipe quando a temporada terminar. 
+
 ## Jogos
 
-Os jogos precisam de um número específico de créditos para poderem ser jogados. Cada jogo está equipado com um leitor de cartão magnético e um monitor de LCD. Quando o cartão é passado na máquina, isso reduz o saldo de créditos, mas dá um número aleatório e não negativo de tíquetes. Imprima o número do cartão e o número de tíquetes ganhos, junto com o novo total. Imprima uma mensagem se um cartão tiver créditos insuficientes para jogar um jogo. 
+Em um jogo, é importante observar o nome e a pontuação de cada equipe, assim como a temperatura do 
+dia. Numere cada jogo com um número de identificação inteiro. Esse número aumenta à medida que o jogo é executado. Mantenha controle de cada jogo jogado nessa temporada. Essa classe armazena uma ArrayList de todos os jogos como um campo.
 
-Na verdade, o "Jogo dos Tíquetes Aleatórios!" é um jogo terrível. Você pode criar um jogo mais complexo, mas isso não é necessário para essa atribuição. 
+Seu programa deve determinar as pontuações aleatoriamente. O número máximo de gols que qualquer equipe pode armazenar deve aumentar proporcionalmente com a temperatura. Mas certifique-se de que esses números sejam razoáveis.
 
-## Categorias de Prêmios
+Quando a temporada terminar, imprima as estatísticas de cada jogo. Imprima a temperatura mais quente e a temperatura média da temporada. 
 
-Cada categoria de prêmio tem um nome, um número de tíquetes obrigatórios para ganhar esse prêmio e uma contagem de quantos itens dessa categoria permanecem em um terminal. Os prêmios não sabem nada sobre o terminal a que eles pertencem.
+## Programador
 
-## Terminais
+Aceite a entrada do usuário por meio de JOptionPane ou de Scanner. Enquanto o aplicativo está sendo executado, peça que o usuário insira uma temperatura. O programa não deve travar devido à entrada do usuário. Se a temperatura estiver quente o suficiente para haver um jogo, programe dois jogos. Os oponentes são escolhidos aleatoriamente. Certifique-se de que as equipes não sejam programadas para jogar contra si mesmas. Se houver três semanas consecutivas de temperaturas congelantes, a temporada estará encerrada.
 
-Cada terminal contém um leitor de cartão magnético. Um terminal aceita dinheiro, que é convertido em créditos em um cartão. O dinheiro é aceito como números inteiros. Os créditos são concedidos em uma proporção de dois créditos a cada um dólar. Os jogadores usam um terminal para verificar os saldos de seus cartões. Inclua o número do cartão nessa impressão. Todos os créditos, ou apenas uma parte deles, podem ser transferidos entre cartões. Sempre imprima os saldos de um cartão quando seus créditos ou tíquetes forem acessados por meio de um terminal. Por último, os tíquetes podem ser trocados nos terminais por prêmios. Imprima uma mensagem de erro se o cartão não tiver tíquetes suficientes ou o terminal estiver sem um tipo específico de prêmio. Imprima quando um prêmio for concedido e o número restante desse prêmio aparecer no terminal.  Um terminal oferece três categorias de prêmios. 
+Exemplo de Saída:
 
+run:
 
-## Método Principal
+Too cold to play.
 
-Instancie dois cartões e quaisquer outros objetos que sejam necessários para testar seu programa. 
+Too cold to play.
 
-•	Carregue os créditos em cada cartão.
+Too cold to play.
 
-•	Jogue um grupo de jogos usando dois cartões.
+Season is over
 
-•	Transfira o saldo de créditos e tíquetes do Cartão 1 para o 2.
+*********RESULTS*********
 
-•	Solicite prêmios usando o Cartão 2.
+Team 1
 
-•	Tente jogar um jogo e solicitar um prêmio usando o Cartão 1.
+Wins: 1, Losses: 1, Ties:0
 
-•	Execute quaisquer outras ações que sejam necessárias para testar seu programa.
+Points Scored: 9, Points Allowed: 9
+
+Team 2
+
+Wins: 1, Losses: 1, Ties:0
+
+Points Scored: 8, Points Allowed: 8
+
+Team 3
+
+Wins: 0, Losses: 1, Ties:1
+
+Points Scored: 6, Points Allowed: 9
+
+Team 4
+
+Wins: 1, Losses: 0, Ties:1
+
+Points Scored: 8, Points Allowed: 5
+
+Game #1
+
+Temperature: 90
+
+Away Team: Team 2, 4
+
+Home Team: Team 4, 7
+
+Game #2
+
+Temperature: 90
+
+Away Team: Team 1, 8
+
+Home Team: Team 3, 5
+
+Game #3
+
+Temperature: 35
+
+Away Team: Team 1, 1
+
+Home Team: Team 2, 4
+
+Game #4
+Temperature: 35
+
+Away Team: Team 3, 1
+
+Home Team: Team 4, 1
+
+Hottest Temp: 90
+
+Average Temp:62.5
